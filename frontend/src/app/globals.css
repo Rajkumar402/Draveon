@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Minimal Editorial Design Colors (Light Theme) */
+  --primary-purple: 271 76% 53%; /* #7B2CBF */
+  --secondary-blue: 190 100% 42%; /* #00B4D8 */
+  --accent-light: 189 78% 59%; /* #48CAE4 */
+  
+  --bg-start: 255 255 255; /* Pure White */
+  --bg-end: 248 249 250; /* Off-White */
+  --surface: 255 255 255; /* White Card */
+  --border: 241 245 249; /* Slate-100 Border */
+  
+  --text-primary: 9 10 15; /* Near Black */
+  --text-secondary: 71 85 105; /* Slate-600 Body */
+  --text-muted: 148 163 184; /* Slate-400 */
+}
+
+.dark {
+  /* Minimal Editorial Design Colors (Dark Theme - Branded Space Obsidian) */
+  --primary-purple: 271 76% 53%;
+  --secondary-blue: 190 100% 42%;
+  --accent-light: 189 78% 59%;
+  
+  --bg-start: 8 9 12; /* Deep Charcoal #08090c */
+  --bg-end: 12 13 18; /* Rich Card Charcoal #0c0d12 */
+  --surface: 12 13 18; /* Card Surface #0c0d12 */
+  --border: 24 26 35; /* Obsidian border #181a23 */
+  
+  --text-primary: 248 249 250; /* Off-White #f8f9fa */
+  --text-secondary: 176 179 198; /* Slate-300 Body #b0b3c6 */
+  --text-muted: 100 116 139; /* Slate-500 #64748b */
+}
+
+body {
+  color: rgb(var(--text-primary));
+  background-image: radial-gradient(circle at 85% 15%, rgba(123, 44, 191, 0.03), transparent 600px),
+                    radial-gradient(circle at 15% 85%, rgba(0, 180, 216, 0.03), transparent 600px);
+  background-color: rgb(var(--bg-start));
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-image: radial-gradient(circle at 85% 15%, rgba(123, 44, 191, 0.09), transparent 600px),
+                    radial-gradient(circle at 15% 85%, rgba(0, 180, 216, 0.09), transparent 600px);
+  background-color: rgb(var(--bg-start));
+}
+
+/* Force standard Tailwind utility classes to map directly to our design system properties */
+.text-slate-950,
+.text-slate-900,
+.text-slate-850,
+.text-slate-800 {
+  color: rgb(var(--text-primary)) !important;
+}
+
+.text-slate-750,
+.text-slate-700,
+.text-slate-600 {
+  color: rgb(var(--text-secondary)) !important;
+}
+
+.text-slate-500 {
+  color: rgb(var(--text-muted)) !important;
+}
+
+.bg-white {
+  background-color: rgb(var(--surface)) !important;
+}
+
+.bg-slate-50,
+.bg-slate-50\/50 {
+  background-color: rgb(var(--bg-end)) !important;
+}
+
+.border-slate-200,
+.border-slate-200\/80,
+.border-slate-100 {
+  border-color: rgb(var(--border)) !important;
+}
+
+/* Brand tag lines adaptation */
+.text-draveonPurple {
+  color: rgb(var(--primary-purple)) !important;
+}
+
+.text-draveonBlue {
+  color: rgb(var(--secondary-blue)) !important;
+}
+
+.text-draveonBlue-light {
+  color: rgb(var(--accent-light)) !important;
+}
+
+.dark .text-draveonPurple {
+  color: #a5b4fc !important; /* High contrast indigo tagline override */
+}
+
+/* Premium gradient styling matching the purple-blue logo */
+.btn-gradient {
+  background: linear-gradient(135deg, #7B2CBF 0%, #00B4D8 100%);
+  color: white;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px 0 rgba(123, 44, 191, 0.2);
+}
+
+.btn-gradient:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px 0 rgba(123, 44, 191, 0.35);
+  opacity: 0.95;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #7B2CBF 0%, #00B4D8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Frosted Glassmorphism Grid Container */
+.premium-card {
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--border));
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(123, 44, 191, 0.2);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.03);
+}
+
+.dark .premium-card:hover {
+  border-color: rgba(0, 180, 216, 0.25);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.35);
+}
+
+/* Spacing and Utilities */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}

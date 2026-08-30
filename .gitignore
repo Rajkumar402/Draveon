@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+backend/venv/
+backend/*.db
+backend/*.sqlite3
+frontend/node_modules/
+frontend/.next/
+*.pyc
+__pycache__/
+*.log
+.DS_Store
+
+frontend/tsconfig.tsbuildinfo
